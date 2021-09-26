@@ -60,7 +60,7 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         if invite_id not in whitelisted_invites:
-            self.send_error(400, "That invite looks strange", "Invalid invite")
+            self.send_error(400, "That invite looks strange", f"Invalid invite: '{invite_id}'")
             return
 
         image = get_cached(invite_id)
